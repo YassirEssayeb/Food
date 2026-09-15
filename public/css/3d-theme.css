@@ -1,0 +1,200 @@
+/* =============================================
+   3D THEME - Three.js Canvas & Overlay Styles
+   ============================================= */
+
+#three-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#three-canvas canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.hero-3d-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 10, 15, 0.3) 0%,
+        rgba(0, 0, 0, 0.1) 50%,
+        rgba(10, 10, 15, 0.4) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+.section-3d-bg {
+    position: relative;
+    z-index: 1;
+}
+
+.section-3d-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(10, 10, 15, 0.92) 0%,
+        rgba(10, 10, 15, 0.8) 50%,
+        rgba(10, 10, 15, 0.92) 100%
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+
+.section-divider {
+    position: relative;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FFB703, transparent);
+    opacity: 0.3;
+    margin: 0;
+    border: none;
+}
+
+.card-3d-glass {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 183, 3, 0.1) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-3d-glass:hover {
+    border-color: rgba(255, 183, 3, 0.3) !important;
+    box-shadow: 0 12px 48px rgba(255, 183, 3, 0.1), 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+.modal-content-3d {
+    background: rgba(20, 18, 25, 0.95) !important;
+    backdrop-filter: blur(30px) !important;
+    -webkit-backdrop-filter: blur(30px) !important;
+    border: 1px solid rgba(255, 183, 3, 0.15) !important;
+    border-radius: 30px !important;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 183, 3, 0.05) !important;
+}
+
+.navbar-3d {
+    background: rgba(10, 10, 15, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 183, 3, 0.08);
+}
+
+.navbar-3d.navbar-scrolled {
+    background: rgba(10, 10, 15, 0.85) !important;
+    border-bottom-color: rgba(255, 183, 3, 0.15);
+}
+
+.form-control-3d {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease;
+}
+
+.form-control-3d:focus {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: #FFB703 !important;
+    box-shadow: 0 0 0 3px rgba(255, 183, 3, 0.1), 0 0 20px rgba(255, 183, 3, 0.05) !important;
+    color: #fff !important;
+}
+
+.form-control-3d::placeholder {
+    color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.page-transition-overlay {
+    position: fixed;
+    inset: 0;
+    background: #0a0a0f;
+    z-index: 99998;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.page-transition-overlay.active {
+    opacity: 1;
+}
+
+.glow-orb {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(60px);
+    opacity: 0.3;
+}
+
+.glow-orb-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 183, 3, 0.12), transparent);
+    top: -150px;
+    right: -150px;
+    animation: orb-float-1 10s ease-in-out infinite;
+}
+
+.glow-orb-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(230, 57, 70, 0.08), transparent);
+    bottom: 10%;
+    left: -100px;
+    animation: orb-float-2 12s ease-in-out infinite;
+}
+
+.glow-orb-3 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 183, 3, 0.06), transparent);
+    bottom: -200px;
+    right: 10%;
+    animation: orb-float-3 15s ease-in-out infinite;
+}
+
+@keyframes orb-float-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-40px, 40px) scale(1.1); }
+    66% { transform: translate(20px, -20px) scale(0.9); }
+}
+
+@keyframes orb-float-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(40px, -30px) scale(1.15); }
+}
+
+@keyframes orb-float-3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-30px, -40px) scale(1.05); }
+    66% { transform: translate(30px, 20px) scale(0.95); }
+}
+
+@media (max-width: 991.98px) {
+    .glow-orb-1 { width: 300px; height: 300px; }
+    .glow-orb-2 { width: 250px; height: 250px; }
+    .glow-orb-3 { width: 350px; height: 350px; }
+}
+
+@media (max-width: 767.98px) {
+    .glow-orb-1 { width: 180px; height: 180px; }
+    .glow-orb-2 { width: 150px; height: 150px; }
+    .glow-orb-3 { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glow-orb {
+        animation: none !important;
+        display: none;
+    }
+}

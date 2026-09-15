@@ -1,0 +1,22 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "node build.js",
+        "watch": "node build.js --watch",
+        "watch-poll": "node build.js --watch",
+        "hot": "node build.js --watch",
+        "prod": "npm run production",
+        "production": "node build.js --production"
+    },
+    "devDependencies": {
+        "axios": "^0.25",
+        "esbuild": "^0.28.1",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14"
+    },
+    "dependencies": {
+        "three": "^0.185.1"
+    }
+}
